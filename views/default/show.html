@@ -1,0 +1,17 @@
+
+{{extend 'layout.html'}}
+
+<h2> {{=row.title}} </h2>
+<i> Posted on {{=row.created_on}} </i>
+<p> {{=row.body}} </p>
+
+{{for comm in comms:}}
+    <div class="card"> 
+        <p class="card-body">
+            {{=comm.created_by.first_name}} {{=comm.created_by.last_name}} on {{=comm.created_on}} says {{=comm.body}}
+        </p>
+    </div>
+     <br />
+{{pass}}
+
+{{=form}}
